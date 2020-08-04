@@ -10,6 +10,7 @@ import { sortData } from './utils';
 import InfoBox from './InfoBox';
 import Map from './Map';
 import Table from './Table';
+import LineGraph from './LineGraph';
 import './App.css';
 
 const App = () => {
@@ -103,13 +104,12 @@ const App = () => {
                 <Map />
             </div>
             <div className="app__right">
-                {/* Table Cases Count */}
-                {/* Graph */}
                 <Card>
                     <CardContent>
                         <h3>Jumlah Kasus Berdasarkan Negara</h3>
 						<Table countries={tableData} />
                         <h3>Kasus Baru Seluruh Dunia</h3>
+						<LineGraph />
                     </CardContent>
                 </Card>
             </div>
