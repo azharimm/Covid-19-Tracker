@@ -12,12 +12,16 @@ import Map from './Map';
 import Table from './Table';
 import LineGraph from './LineGraph';
 import './App.css';
+import "leaflet/dist/leaflet.css"
+
 
 const App = () => {
     const [countries, setCountries] = useState([]);
     const [country, setCountry] = useState('worldwide');
 	const [countryInfo, setCountryInfo] = useState({});
 	const [tableData, setTableData] = useState([]);
+	const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796});
+	const [mapZoom, setMapZoom] = useState(3)
 
     // https://disease.sh/v3/covid-19/countries
 
@@ -58,7 +62,8 @@ const App = () => {
                 : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
 
         const response = await fetch(url);
-        const responseData = await response.json();
+		const responseData = await response.json();
+		setMapCenter([responseData.countryInfo.lat, responseData.countryInfo.long])
         setCountryInfo(responseData);
     };
 
@@ -101,7 +106,7 @@ const App = () => {
                     />
                 </div>
 
-                <Map />
+                <Map center={mapCenter} zoom={mapZoom} />
             </div>
             <div className="app__right">
                 <Card>
