@@ -51,6 +51,7 @@ body {
 
 .app__graphTitle {
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .app__graph {
