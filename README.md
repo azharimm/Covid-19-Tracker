@@ -7,4 +7,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # Screenshot
 
 ## Homepage
-![Home Page](https://raw.githubusercontent.com/azharimm/Covid-19-Tracker/master/src/thumbnail.PNG)
+![Home Page](https://raw.githubusercontent.com/azharimm/Covid-19-Tracker/master/thumbnail.PNG)
